@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- PERBAIKAN 1: Atribut lang ditambahkan untuk aksesibilitas dan SEO -->
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- PERBAIKAN 2: Meta viewport ditambahkan — kritis untuk responsivitas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PERBAIKAN 3: Meta description untuk SEO -->
+  <meta name="description" content="TechZone Lab — Solusi teknologi terdepan untuk bisnis modern.">
+  <title>TechZone — Halaman Solusi Responsif</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVIGASI — Mobile-first dengan hamburger
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- PERBAIKAN 4: Logo sebagai link dengan teks yang bermakna -->
+      <a href="#beranda" class="logo">TechZone Lab</a>
+
+      <!-- PERBAIKAN 5: Tombol hamburger untuk mobile (ARIA + semantik) -->
+      <button class="hamburger" id="hamburgerBtn"
+              aria-label="Buka navigasi"
+              aria-expanded="false"
+              aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- PERBAIKAN 6: Nav-links dengan id untuk kontrol ARIA -->
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#tim">Tim</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       HERO SECTION
+       ===================================================== -->
+  <section class="hero" id="beranda">
+    <div class="hero-content">
+      <h1>Solusi Teknologi<br>Terdepan untuk Bisnis</h1>
+      <p>Kami menyediakan layanan pengembangan web, aplikasi mobile, dan konsultasi teknologi untuk membantu bisnis Anda berkembang di era digital.</p>
+      <!-- PERBAIKAN 7: Tombol dibungkus .hero-buttons dengan flex-wrap -->
+      <div class="hero-buttons">
+        <a href="#layanan" class="btn-primary">Lihat Layanan</a>
+        <a href="#kontak" class="btn-secondary">Hubungi Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       TENTANG — Flexbox responsif
+       ===================================================== -->
+  <section class="about" id="tentang">
+    <div class="container">
+      <h2>Tentang Kami</h2>
+      <!-- PERBAIKAN 8: Flexbox dengan flex-wrap menggantikan float -->
+      <div class="about-grid">
+        <div class="about-image">
+          <!-- PERBAIKAN 9: alt deskriptif, gambar menggunakan width:100% di CSS -->
+          <img src="https://via.placeholder.com/600x420?text=TechZone+Lab"
+               alt="Kantor TechZone Lab di Makassar">
+        </div>
+        <div class="about-text">
+          <h3>Siapa Kami?</h3>
+          <p>TechZone Lab adalah perusahaan teknologi yang berdiri sejak 2018. Kami berfokus pada pengembangan solusi digital inovatif yang membantu perusahaan dari berbagai skala untuk bertransformasi secara digital.</p>
+          <p>Tim kami terdiri dari lebih dari 50 profesional berpengalaman di bidang pengembangan perangkat lunak, desain UI/UX, keamanan siber, dan manajemen proyek teknologi.</p>
+          <p>Dengan pengalaman lebih dari 5 tahun dan ratusan proyek yang telah diselesaikan, kami berkomitmen untuk memberikan solusi berkualitas tinggi dengan harga yang kompetitif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       LAYANAN — CSS Grid responsif
+       ===================================================== -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <h2>Layanan Kami</h2>
+      <!-- PERBAIKAN 10: Grid dengan auto-fit — otomatis responsif -->
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">🖥️</div>
+          <h3>Pengembangan Web</h3>
+          <p>Kami merancang dan membangun website modern yang responsif, cepat, dan aman untuk berbagai kebutuhan bisnis Anda.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">📱</div>
+          <h3>Aplikasi Mobile</h3>
+          <p>Kami mengembangkan aplikasi mobile berbasis iOS dan Android dengan pengalaman pengguna yang intuitif dan performa tinggi.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">☁️</div>
+          <h3>Cloud &amp; DevOps</h3>
+          <p>Solusi infrastruktur cloud dan otomasi deployment untuk memastikan skalabilitas dan ketersediaan layanan Anda.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       TIM — CSS Grid responsif
+       ===================================================== -->
+  <section class="team" id="tim">
+    <div class="container">
+      <h2>Tim Kami</h2>
+      <!-- PERBAIKAN 11: Grid dengan auto-fit — otomatis responsif -->
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150?text=AF"
+               alt="Foto Ahmad Fauzi, CEO &amp; Founder TechZone Lab">
+          <h3>Ahmad Fauzi</h3>
+          <p>CEO &amp; Founder</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150?text=SR"
+               alt="Foto Siti Rahayu, Lead Developer TechZone Lab">
+          <h3>Siti Rahayu</h3>
+          <p>Lead Developer</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150?text=BS"
+               alt="Foto Budi Santoso, UI/UX Designer TechZone Lab">
+          <h3>Budi Santoso</h3>
+          <p>UI/UX Designer</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150?text=DL"
+               alt="Foto Dewi Lestari, Project Manager TechZone Lab">
+          <h3>Dewi Lestari</h3>
+          <p>Project Manager</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       KONTAK — Form aksesibel dan responsif
+       ===================================================== -->
+  <section class="contact" id="kontak">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <!-- PERBAIKAN 12: Form max-width + width:100% di CSS -->
+      <form class="contact-form" novalidate>
+
+        <!-- PERBAIKAN 13: Label dengan atribut for diasosiasikan dengan input -->
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama"
+                 placeholder="Masukkan nama lengkap Anda" required
+                 autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Alamat Email</label>
+          <input type="email" id="email" name="email"
+                 placeholder="nama@domain.com" required
+                 autocomplete="email">
+        </div>
+
+        <!-- PERBAIKAN 14: Select dengan label dan styling konsisten -->
+        <div class="form-group">
+          <label for="layanan">Pilih Layanan</label>
+          <select id="layanan" name="layanan">
+            <option value="">-- Pilih Layanan --</option>
+            <option value="web">Pengembangan Web</option>
+            <option value="mobile">Aplikasi Mobile</option>
+            <option value="cloud">Cloud &amp; DevOps</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan"
+                    placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+        </div>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER — Flex dengan wrap
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <!-- PERBAIKAN 15: flex-wrap agar kolom turun ke baris baru di layar kecil -->
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechZone Lab</h4>
+          <p style="font-size:0.875rem; line-height:1.6; color:#aaa;">Solusi teknologi terdepan untuk bisnis modern Anda.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Pengembangan Web</a></li>
+            <li><a href="#">Aplikasi Mobile</a></li>
+            <li><a href="#">Cloud &amp; DevOps</a></li>
+            <li><a href="#">Konsultasi IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Perusahaan</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Tim</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <!-- PERBAIKAN 16: word-break ditangani di CSS, tidak overflow lagi -->
+            <li>📍 Jl. Sultan Alauddin No.259, Makassar</li>
+            <li>📞 +62 411 866 972</li>
+            <li>✉️ info@techzonelab.id</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TechZone Lab. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT — Toggle navigasi mobile
+       ===================================================== -->
+  <!-- PERBAIKAN 17: JavaScript untuk hamburger menu -->
+  <script>
+    (function () {
+      const btn  = document.getElementById('hamburgerBtn');
+      const menu = document.getElementById('navMenu');
+
+      btn.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('open');
+        btn.classList.toggle('active', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Tutup menu saat tautan di-klik
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('open');
+          btn.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Tutup menu saat klik di luar navbar
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

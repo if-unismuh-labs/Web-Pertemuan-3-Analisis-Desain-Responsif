@@ -1,0 +1,382 @@
+/* ============================================================
+   HALAMAN BERMASALAH — Asesmen Desain Responsif
+   Identifikasi semua masalah responsivitas di bawah ini!
+   ============================================================ */
+
+/* --- Reset sederhana --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MASALAH 1: font-size dasar menggunakan px, bukan rem/% */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* MASALAH 2: Lebar container tetap 1200px, tidak menggunakan max-width atau % */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================================
+   NAVIGASI
+   ============================================================ */
+
+/* MASALAH 3: Navbar menggunakan lebar tetap dan tidak ada media query */
+.navbar {
+  background-color: #2c3e50;
+  width: 1200px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  /* MASALAH 4: transform tidak digunakan dengan benar untuk centering */
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+  /* MASALAH 5: white-space nowrap tanpa truncation, meluap pada layar kecil */
+  white-space: nowrap;
+}
+
+/* MASALAH 6: nav-links menggunakan lebar fixed dan tidak akan collapse di mobile */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-left: 40px;
+}
+
+.nav-links li {
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  /* MASALAH 7: font-size fixed px */
+  font-size: 15px;
+}
+
+/* Tombol hamburger tidak ada sama sekali */
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+  /* MASALAH 8: margin-top fixed, tidak memperhitungkan perubahan tinggi navbar */
+  margin-top: 70px;
+  /* MASALAH 9: height tetap, konten bisa overflow pada layar kecil */
+  height: 500px;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  color: #fff;
+  /* MASALAH 10: lebar tetap 700px, akan overflow di layar kecil */
+  width: 700px;
+}
+
+.hero-content h1 {
+  /* MASALAH 11: font-size tetap px, terlalu besar di mobile */
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+  /* MASALAH 12: padding menggunakan px tanpa penyesuaian untuk touch target */
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  display: inline-block;
+}
+
+/* ============================================================
+   SECTION TENTANG (ABOUT) — Layout dua kolom
+   ============================================================ */
+
+.about {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* MASALAH 13: Layout dua kolom menggunakan float dan lebar px, tidak responsif */
+.about-grid {
+  overflow: hidden;
+}
+
+.about-image {
+  float: left;
+  /* MASALAH 14: lebar gambar fixed px */
+  width: 500px;
+  margin-right: 40px;
+}
+
+/* MASALAH 15: gambar tidak responsif */
+.about-image img {
+  width: 500px;
+  height: 350px;
+}
+
+.about-text {
+  overflow: hidden;
+}
+
+.about-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* ============================================================
+   SECTION LAYANAN (SERVICES) — 3 kolom
+   ============================================================ */
+
+.services {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* MASALAH 16: .services-grid menggunakan lebar fixed total */
+.services-grid {
+  display: flex;
+  /* MASALAH 17: gap px yang kaku */
+  gap: 20px;
+}
+
+/* MASALAH 18: setiap kartu lebar fixed px */
+.service-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  /* MASALAH 19: lebar fixed alih-alih flex: 1 atau % */
+  width: 360px;
+  text-align: center;
+}
+
+.service-card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SECTION TIM (TEAM) — 4 kolom
+   ============================================================ */
+
+.team {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.team h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* MASALAH 20: .team-grid menggunakan lebar fixed dan tidak ada wrapping */
+.team-grid {
+  display: flex;
+  gap: 20px;
+  /* MASALAH 21: overflow hidden menutupi masalah */
+  overflow: hidden;
+}
+
+/* MASALAH 22: member card dengan lebar fixed */
+.team-member {
+  width: 270px;
+  text-align: center;
+}
+
+/* MASALAH 23: gambar avatar fixed size */
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ============================================================
+   SECTION KONTAK (CONTACT)
+   ============================================================ */
+
+.contact {
+  padding: 60px 0;
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* MASALAH 24: form lebar fixed px di tengah */
+.contact-form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  /* MASALAH 25: font-size terlalu kecil pada elemen form */
+  font-size: 13px;
+}
+
+.contact-form textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  /* MASALAH 26: tombol tidak full-width di mobile */
+  display: inline-block;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  background-color: #1a252f;
+  color: #aaa;
+  /* MASALAH 27: padding fixed px */
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer .footer-grid {
+  display: flex;
+  /* MASALAH 28: tidak ada flex-wrap, kolom tidak turun ke baris baru */
+  gap: 40px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+footer .footer-col h4 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+footer .footer-col ul {
+  list-style: none;
+}
+
+footer .footer-col ul li {
+  margin-bottom: 8px;
+}
+
+footer .footer-col ul li a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer .footer-bottom {
+  border-top: 1px solid #2c3e50;
+  padding-top: 20px;
+  font-size: 13px;
+}
+
+/* ============================================================
+   ELEMEN ABSOLUT YANG TUMPANG TINDIH
+   ============================================================ */
+
+/* MASALAH 29: badge menggunakan posisi absolut dengan nilai px fixed
+   — akan tumpang tindih pada layar kecil */
+.badge {
+  position: absolute;
+  top: 90px;
+  right: 80px;
+  background-color: #f39c12;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* MASALAH 30: Sama sekali tidak ada media query di seluruh file ini */

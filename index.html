@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- MASALAH 1: Tag <html> tidak menyertakan atribut lang -->
+<html>
+<head>
+  <!-- MASALAH 2: Meta viewport TIDAK ADA — halaman tidak akan menyesuaikan lebar perangkat mobile -->
+  <meta charset="UTF-8">
+  <title>TechZone — Halaman Bermasalah</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- MASALAH 3: Tidak ada meta description -->
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVIGASI
+       ===================================================== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">TechZone Lab</div>
+      <!-- MASALAH 4: Tidak ada tombol hamburger untuk mobile -->
+      <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#tim">Tim</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+    <!-- MASALAH 5: Badge absolut akan tumpang tindih dengan konten navbar di layar kecil -->
+    <span class="badge">🔥 Daftar Sekarang!</span>
+  </nav>
+
+  <!-- =====================================================
+       HERO SECTION
+       ===================================================== -->
+  <section class="hero" id="beranda">
+    <div class="hero-content">
+      <h1>Solusi Teknologi<br>Terdepan untuk Bisnis</h1>
+      <p>Kami menyediakan layanan pengembangan web, aplikasi mobile, dan konsultasi teknologi untuk membantu bisnis Anda berkembang di era digital.</p>
+      <!-- MASALAH 6: Dua tombol diletakkan berdampingan, akan overflow di mobile -->
+      <a href="#layanan" class="btn-primary">Lihat Layanan</a>
+      <a href="#kontak" class="btn-primary" style="margin-left:15px; background-color:#27ae60;">Hubungi Kami</a>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       TENTANG
+       ===================================================== -->
+  <section class="about" id="tentang">
+    <div class="container">
+      <h2>Tentang Kami</h2>
+      <div class="about-grid">
+        <!-- MASALAH 7: Menggunakan float, gambar fixed-width, tidak responsif -->
+        <div class="about-image">
+          <!-- MASALAH 8: src menggunakan URL eksternal yang mungkin lambat; alt kurang deskriptif -->
+          <img src="https://via.placeholder.com/500x350" alt="gambar">
+        </div>
+        <div class="about-text">
+          <h3>Siapa Kami?</h3>
+          <p>TechZone Lab adalah perusahaan teknologi yang berdiri sejak 2018. Kami berfokus pada pengembangan solusi digital inovatif yang membantu perusahaan dari berbagai skala untuk bertransformasi secara digital.</p>
+          <p>Tim kami terdiri dari lebih dari 50 profesional berpengalaman di bidang pengembangan perangkat lunak, desain UI/UX, keamanan siber, dan manajemen proyek teknologi.</p>
+          <p>Dengan pengalaman lebih dari 5 tahun dan ratusan proyek yang telah diselesaikan, kami berkomitmen untuk memberikan solusi berkualitas tinggi dengan harga yang kompetitif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       LAYANAN
+       ===================================================== -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <h2>Layanan Kami</h2>
+      <!-- MASALAH 9: 3 kartu dengan lebar fixed, tidak responsif di tablet/mobile -->
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">🖥️</div>
+          <h3>Pengembangan Web</h3>
+          <p>Kami merancang dan membangun website modern yang responsif, cepat, dan aman untuk berbagai kebutuhan bisnis Anda.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">📱</div>
+          <h3>Aplikasi Mobile</h3>
+          <p>Kami mengembangkan aplikasi mobile berbasis iOS dan Android dengan pengalaman pengguna yang intuitif dan performa tinggi.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">☁️</div>
+          <h3>Cloud & DevOps</h3>
+          <p>Solusi infrastruktur cloud dan otomasi deployment untuk memastikan skalabilitas dan ketersediaan layanan Anda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       TIM
+       ===================================================== -->
+  <section class="team" id="tim">
+    <div class="container">
+      <h2>Tim Kami</h2>
+      <!-- MASALAH 10: 4 kartu anggota tim, tidak ada flex-wrap, overflow di mobile -->
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="foto">
+          <h3>Ahmad Fauzi</h3>
+          <p>CEO & Founder</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="foto">
+          <h3>Siti Rahayu</h3>
+          <p>Lead Developer</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="foto">
+          <h3>Budi Santoso</h3>
+          <p>UI/UX Designer</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="foto">
+          <h3>Dewi Lestari</h3>
+          <p>Project Manager</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       KONTAK
+       ===================================================== -->
+  <section class="contact" id="kontak">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <!-- MASALAH 11: Form dengan lebar fixed px -->
+      <form class="contact-form">
+        <!-- MASALAH 12: Label tidak diasosiasikan dengan input (tidak ada for/id) -->
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Alamat Email" required>
+        <!-- MASALAH 13: select tidak memiliki styling yang konsisten -->
+        <select style="width:100%; padding:12px; margin-bottom:20px; border:none; border-radius:4px;">
+          <option>-- Pilih Layanan --</option>
+          <option>Pengembangan Web</option>
+          <option>Aplikasi Mobile</option>
+          <option>Cloud & DevOps</option>
+        </select>
+        <textarea placeholder="Pesan Anda..." required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <!-- MASALAH 14: Footer 4 kolom tanpa flex-wrap, overflow di mobile -->
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TechZone Lab</h4>
+          <p style="font-size:13px; line-height:1.6; color:#aaa;">Solusi teknologi terdepan untuk bisnis modern Anda.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Pengembangan Web</a></li>
+            <li><a href="#">Aplikasi Mobile</a></li>
+            <li><a href="#">Cloud & DevOps</a></li>
+            <li><a href="#">Konsultasi IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Perusahaan</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Tim</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <!-- MASALAH 15: Teks panjang tanpa word-break, overflow di mobile -->
+            <li>📍 Jl. Sultan Alauddin No.259, Makassar</li>
+            <li>📞 +62 411 866 972</li>
+            <li>✉️ info@techzonelab.id</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TechZone Lab. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MASALAH 16: Tidak ada JavaScript untuk toggle navigasi mobile -->
+
+</body>
+</html>
